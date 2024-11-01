@@ -40,6 +40,9 @@ namespace src.services
 
         public async Task<List<ImageDTO>> GetImageDetailByPageNumber(int page)
         {
+            if (page < 1)
+                throw new Exception("Argument with page Number");
+
             var image1Id = GlobalVariables.pairedDictionary.ElementAt(page-1).Key;
             var image2Id = GlobalVariables.pairedDictionary.ElementAt(page-1).Value;
 
@@ -96,6 +99,36 @@ namespace src.services
                 total = GlobalVariables.pairedDictionary.Count()
             };
             return totalCount;
+        } 
+
+        public async Task<ResultDTO> CheckImageSelectedOrNot(int userId, int page)
+        {
+            if (page > GlobalVariables.pairedDictionary.Count)
+                throw new Exception();
+
+            var image1Id = GlobalVariables.pairedDictionary.ElementAt(page).Key;
+            var image2Id = GlobalVariables.pairedDictionary.ElementAt(page).Value;
+
+            var query = _dbcontext.Results
+                .Where(e => e.UserId == userId)
+                .Where(e => e.Image1Id == image1Id)
+                .Where(e => e.Image2Id == image2Id)
+                .OrderBy(e=>e.Id);
+            
+            var rate = await query.LastOrDefaultAsync();
+
+            if (rate == null)
+                return new ResultDTO()
+                {
+                    Rate = null
+                };
+
+            return new ResultDTO
+            {
+                Rate = rate.RateValue
+            };
+
+
         }
 
     }

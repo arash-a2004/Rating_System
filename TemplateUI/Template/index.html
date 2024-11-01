@@ -23,17 +23,10 @@
         'opsz' 24
         }
     </style>
-    <!--
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8803344579810006"
-    crossorigin="anonymous"></script>
-    -->
+   
 </head>
 <body>
     <div class="container">
-        <audio id="clickSound" src="{{ url_for('static', filename='click.mp3') }}" preload="auto"></audio>
-        
-        
-
         <!-- IMAGE COMPARISON -->
         <div class="image-comparison">
             <div class="images">
@@ -47,21 +40,31 @@
             <div class="buttons">
                 <div class="button-group">
                     <div class="action-buttons">
-                        <button id="image1-btn" onclick="selectWinner('image1')">Image A is better <span class="shortcut">(Press 1 or left arrow)</span></button>
-                        <button id="remove-image1-btn" onclick="removeImage(currentImages['image1'])" class="major-icon-btn" title="Remove Image A">
-                            <span class="material-symbols-rounded">delete</span>
-                        </button>
+                        <button id="image1-btn" onclick="selectWinner('image1')">Image 1 is better</button>
                     </div>
                 </div>
                 <div class="button-group">
                     <div class="action-buttons">
-                        <button id="image2-btn" onclick="selectWinner('image2')">Image B is better <span class="shortcut">(Press 2 or right arrow)</span></button>
-                        <button id="remove-image2-btn" onclick="removeImage(currentImages['image2'])" class="major-icon-btn" title="Remove Image B">
-                            <span class="material-symbols-rounded">delete</span>
-                        </button>
+                        <button id="noOption-btn">No option </button>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <div class="action-buttons">
+                        <button id="image2-btn" onclick="selectWinner('image2')">Image 2 is better </button>
                     </div>
                 </div>
             </div>
+            <div class="counter" style=" align-items: center; justify-content: center; gap: 10px; font-size: 1.2em;">
+                <button class="paginate left" style="border: none; font-size: 1.5em; cursor: pointer; padding: 5px;">
+                    ❮
+                </button>
+                <span class="Page" style="padding: 0 5px;">2</span>
+                <span style="padding: 0 5px;">From</span>
+                <span class="TotalPage" style="padding: 0 5px;">5</span>
+                <button class="paginate right" style="border: none; font-size: 1.5em; cursor: pointer; padding: 5px;">
+                    ❯
+                </button>
+            </div>          
         </div>
     
   

@@ -1146,3 +1146,22 @@ button:active {
     height: 320px; /* Set a fixed height */
     overflow: hidden; /* Hide overflow content */
 }
+
+
+
+.paginate.left::before,
+.paginate.right::before {
+    content: "❮";
+}
+
+.paginate.right::before {
+    content: "❯";
+}
+
+.paginate:hover {
+    color: #d0d0d0;
+}
+
+.paginate:active {
+    transform: scale(0.95);
+}

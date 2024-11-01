@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using src.DBContext;
 using src.models;
@@ -7,6 +8,7 @@ namespace src.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors]
     public class ImageAPIGateway : ControllerBase
     {
         private readonly RatingSystemDbcontext _dbcontext;
@@ -46,6 +48,24 @@ namespace src.Controllers
                 return Ok();    
             }
             catch(Exception ex) 
+            {
+                Console.WriteLine(ex.ToString);
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        [HttpGet]
+        [Route("Image/CheckImageSelectedOrNot")]
+        public async Task<ActionResult<ResultDTO>> CheckImageSelectedOrNot([FromHeader] int userId, [FromHeader] int page)
+        {
+
+            services.ImageServices imageService = new services.ImageServices(_dbcontext);
+            try
+            {
+                var a = await imageService.CheckImageSelectedOrNot(userId,page);
+                return Ok(a);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString);
                 return BadRequest(ex.ToString());

@@ -1,6 +1,37 @@
 [
   {
     "ContainingType": "src.Controllers.ImageAPIGateway",
+    "Method": "CheckImageSelectedOrNot",
+    "RelativePath": "ImageAPIGateway/Image/CheckImageSelectedOrNot",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "src.models.DTO.RateImageDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "src.Controllers.ImageAPIGateway",
     "Method": "GetImageByPageNumber",
     "RelativePath": "ImageAPIGateway/Image/GetImageByPageNumber",
     "HttpMethod": "GET",
