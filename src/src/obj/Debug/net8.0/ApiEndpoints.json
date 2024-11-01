@@ -1,0 +1,69 @@
+[
+  {
+    "ContainingType": "src.Controllers.ImageAPIGateway",
+    "Method": "GetImageByPageNumber",
+    "RelativePath": "ImageAPIGateway/Image/GetImageByPageNumber",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[src.models.DTO.ImageDTO, src, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "src.Controllers.ImageAPIGateway",
+    "Method": "RateImageByPageNumber",
+    "RelativePath": "ImageAPIGateway/Image/RateImageByPageNumber",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "rateDTO",
+        "Type": "src.models.DTO.RateImageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "src.Controllers.ImageAPIGateway",
+    "Method": "TotalCountImages",
+    "RelativePath": "ImageAPIGateway/Image/TotalCountImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "src.models.DTO.TotalCount",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

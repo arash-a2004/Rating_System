@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|solutionrelative:src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\services\\imageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|solutionrelative:src\\services\\imageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\models\\dto\\totalcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|solutionrelative:src\\models\\dto\\totalcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\controllers\\imageapigateway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|solutionrelative:src\\controllers\\imageapigateway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\models\\dto\\rateimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|solutionrelative:src\\models\\dto\\rateimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5C14686-E90C-4AC5-A84E-F5421699F438}|src\\src.csproj|c:\\users\\asusiran\\desktop\\asli\\rating_system\\src\\src\\seed\\imagecreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Program.cs",
-              "RelativeDocumentMoniker": "src\\Program.cs",
-              "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Program.cs",
-              "RelativeToolTip": "src\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "TotalCount.cs",
+              "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\models\\DTO\\TotalCount.cs",
+              "RelativeDocumentMoniker": "src\\models\\DTO\\TotalCount.cs",
+              "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\models\\DTO\\TotalCount.cs",
+              "RelativeToolTip": "src\\models\\DTO\\TotalCount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T09:13:14.421Z",
+              "WhenOpened": "2024-11-01T10:55:41.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "RateImageDTO.cs",
+              "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\models\\DTO\\RateImageDTO.cs",
+              "RelativeDocumentMoniker": "src\\models\\DTO\\RateImageDTO.cs",
+              "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\models\\DTO\\RateImageDTO.cs",
+              "RelativeToolTip": "src\\models\\DTO\\RateImageDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T10:49:46.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ImageAPIGateway.cs",
+              "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Controllers\\ImageAPIGateway.cs",
+              "RelativeDocumentMoniker": "src\\Controllers\\ImageAPIGateway.cs",
+              "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Controllers\\ImageAPIGateway.cs",
+              "RelativeToolTip": "src\\Controllers\\ImageAPIGateway.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAIwEIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T10:33:03.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ImageCreator.cs",
               "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Seed\\ImageCreator.cs",
               "RelativeDocumentMoniker": "src\\Seed\\ImageCreator.cs",
               "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\Seed\\ImageCreator.cs",
               "RelativeToolTip": "src\\Seed\\ImageCreator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T09:09:07.687Z",
+              "WhenOpened": "2024-11-01T10:29:39.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ImageServices.cs",
+              "DocumentMoniker": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\services\\ImageServices.cs",
+              "RelativeDocumentMoniker": "src\\services\\ImageServices.cs",
+              "ToolTip": "C:\\Users\\AsusIran\\Desktop\\asli\\Rating_System\\src\\src\\services\\ImageServices.cs",
+              "RelativeToolTip": "src\\services\\ImageServices.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAIAwwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T10:23:26.638Z",
               "EditorCaption": ""
             }
           ]
