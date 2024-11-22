@@ -1,11 +1,11 @@
-﻿using src.DBContext;
+﻿using src.Data;
 
 namespace src.Seed
 {
     public class InitialHostDbBuilder
     {
-        private readonly RatingSystemDbcontext _ratingSystemDb;
-        public InitialHostDbBuilder(RatingSystemDbcontext ratingSystemDb)
+        private readonly ApplicationDbContext _ratingSystemDb;
+        public InitialHostDbBuilder(ApplicationDbContext ratingSystemDb)
         {
             _ratingSystemDb = ratingSystemDb;
         }

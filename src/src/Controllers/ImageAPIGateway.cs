@@ -1,26 +1,32 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using src.DBContext;
+using src.Data;
 using src.models;
 using src.models.DTO;
+using src.Models;
 
 namespace src.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     [EnableCors]
+    //[Authorize]
     public class ImageAPIGateway : ControllerBase
     {
-        private readonly RatingSystemDbcontext _dbcontext;
+        private readonly ApplicationDbContext _dbcontext;
+        private readonly UserManager<User> _userManager;
 
-        public ImageAPIGateway(RatingSystemDbcontext dbcontext)
+        public ImageAPIGateway(ApplicationDbContext dbcontext, UserManager<User> userManager)
         {
             _dbcontext = dbcontext;
+            _userManager = userManager;
         }
 
         [HttpGet]
         [Route("Image/GetImageByPageNumber")]
-        public async Task<ActionResult<List<ImageDTO>>> GetImageByPageNumber(int page)
+        public async Task<ActionResult<List<ImageDTO>>> GetImageByPageNumber([FromHeader]int page)
         {
             services.ImageServices imageService = new services.ImageServices(_dbcontext);
             try
@@ -37,14 +43,16 @@ namespace src.Controllers
             }
 
 
+
+
         [HttpPost]
         [Route("Image/RateImageByPageNumber")]
-        public async Task<ActionResult> RateImageByPageNumber([FromHeader] int userId, [FromBody] RateImageDTO rateDTO)
+        public async Task<ActionResult> RateImageByPageNumber( [FromBody] RateImageDTO rateDTO)
         {
             services.ImageServices imageService = new services.ImageServices(_dbcontext);
             try
             {
-                await imageService.RateImageByPageNumber(userId, rateDTO.PageNumber, rateDTO.Rate);
+                await imageService.RateImageByPageNumber(_userManager.GetUserId(User), rateDTO.PageNumber, rateDTO.Rate);
                 return Ok();    
             }
             catch(Exception ex) 
@@ -54,15 +62,17 @@ namespace src.Controllers
             }
         }
 
+
+
         [HttpGet]
         [Route("Image/CheckImageSelectedOrNot")]
-        public async Task<ActionResult<ResultDTO>> CheckImageSelectedOrNot([FromHeader] int userId, [FromHeader] int page)
+        public async Task<ActionResult<ResultDTO>> CheckImageSelectedOrNot( [FromHeader] int page)
         {
 
             services.ImageServices imageService = new services.ImageServices(_dbcontext);
             try
             {
-                var a = await imageService.CheckImageSelectedOrNot(userId,page);
+                var a = await imageService.CheckImageSelectedOrNot(_userManager.GetUserId(User), page);
                 return Ok(a);
             }
             catch (Exception ex)
@@ -91,6 +101,9 @@ namespace src.Controllers
 
 
         }
+
+
+
 
     }
 }

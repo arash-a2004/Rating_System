@@ -1,14 +1,8 @@
-﻿namespace src.models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace src.Models
 {
-    public sealed class User
+    public class User: IdentityUser
     {
-
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public DateTime CreateAt { get; set; }
-        public List<Results> ResultList { get; set; } = new List<Results>();
-
     }
 }

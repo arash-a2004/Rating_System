@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using src.DBContext;
+using src.Data;
 using src.models;
 using src.models.DTO;
 
@@ -7,9 +7,9 @@ namespace src.services
 {
     public class ImageServices
     {
-        private readonly RatingSystemDbcontext _dbcontext;
+        private readonly ApplicationDbContext _dbcontext;
 
-        public ImageServices(RatingSystemDbcontext dbcontext)
+        public ImageServices(ApplicationDbContext dbcontext)
         {
             _dbcontext = dbcontext;
         }
@@ -65,30 +65,20 @@ namespace src.services
             return result;
         }
 
-        public async Task RateImageByPageNumber(int userId,int page, RatingValue RateValue)
+        public async Task RateImageByPageNumber(string userId,int page, RatingValue RateValue)
         {
             var image1Id = GlobalVariables.pairedDictionary.ElementAt(page).Key;
             var image2Id = GlobalVariables.pairedDictionary.ElementAt(page).Value;
 
-            var user = await _dbcontext.Users
-                .Where(e =>e.Id == userId)
-                .FirstOrDefaultAsync();
-
-            if(user == null)
-            {
-                throw new Exception($"there is no user with id = {userId}");
-            }
 
             var result = new models.Results()
             {
                 Image1Id = image1Id,
                 Image2Id = image2Id,
-                User = user,
                 RateValue = RateValue,
                 UserId = userId
             };
             
-            _dbcontext.Users.Add(user);
             await _dbcontext.SaveChangesAsync();
         }
 
@@ -101,7 +91,7 @@ namespace src.services
             return totalCount;
         } 
 
-        public async Task<ResultDTO> CheckImageSelectedOrNot(int userId, int page)
+        public async Task<ResultDTO> CheckImageSelectedOrNot(string userId, int page)
         {
             if (page > GlobalVariables.pairedDictionary.Count)
                 throw new Exception();

@@ -1,11 +1,11 @@
-﻿using src.DBContext;
-
+﻿using src.Data;
+using src.Models;
 namespace src.Seed
 {
     public class ImageCreator
     {
-        private readonly RatingSystemDbcontext _ratingSystemDb;
-        public ImageCreator(RatingSystemDbcontext ratingSystemDb)
+        private readonly ApplicationDbContext _ratingSystemDb;
+        public ImageCreator(ApplicationDbContext ratingSystemDb)
         {
             _ratingSystemDb = ratingSystemDb;
         }
